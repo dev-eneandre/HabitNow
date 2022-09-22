@@ -2,15 +2,33 @@
     font-family: rubik;
     src: url("../assets/fonts/Rubik-Bold.ttf");
 }
+@font-face {
+    font-family: Poppins;
+    src: url("../assets/fonts/Poppins-Medium.ttf");
+}
+:root{
+    --DarkThemeBackgroundColor : #121212;
+    --LightThemeBackgroundColor : rgb(255,255,255,38%);
+
+    --DarkThemeTextColor : rgb(255,255,255,38%);
+    --LightThemeTextColor : #121212;
+}
 .home{
     min-height: 100vh;
-    background-color: #121212;
+    background-color: var(--LightThemeBackgroundColor);
+    color: var(--LightThemeTextColor);
     position: relative;
     display: flex;
     font-family: rubik;
+    transition: 0.75s;
 }
 .home.dark{
-    background-color: #121212;
+    min-height: 100vh;
+    background-color: var(--DarkThemeBackgroundColor);
+    color: var(--DarkThemeTextColor);
+    position: relative;
+    display: flex;
+    font-family: rubik;
 }
 .home .sidenav{
     height: 100vh;
@@ -121,6 +139,18 @@
     cursor: pointer;
     transition: 0.5s;
 }
+.navwrap:hover{
+    /* border: 1px solid rgb(255,255,255,38%); */
+    /* background: #502F33; */
+}
+.navwrap:hover{
+    border: 1px solid rgb(255,255,255,38%);
+    background-color: #502F33;
+}
+a:active{
+    border: 1px solid rgb(255,255,255,38%);
+    background-color: #502F33;
+}
 .nav__iconwrap{
     width: 22px;
     height: 22px;
@@ -141,23 +171,26 @@
     /* box-shadow: 0px 3px #555; */
     
 }
-.navwrap:hover{
-    border: 1px solid rgb(255,255,255,38%);
-    background: #502F33;
-}
 .navwrap h6{
     padding-left: 30px;
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 300;   
     color : rgb(255,255,255,38%)
 }
 .footernav{
     padding: 20px;
 }
-.mainBody{
-    background: #121212;
+
+.home .mainBody{
+    background-color: var(--LightThemeBackgroundColor);
+    color: var(--LightThemeTextColor);
     width: 100vw;
     min-height: 100vh;
+    transition: 0.5s ease;
+}
+.home.dark .mainBody{
+    background: var(--DarkThemeBackgroundColor);
+    color: var(--DarkThemeTextColor);
 }
 .navbar{
     display: flex;
@@ -167,38 +200,125 @@
     margin-top: 30px;
 
 }
+.navbar__right{
+    width: 300px;
+    /* background-color: #502F33; */
+}
+.home .searchBar input{
+    background: var(--LightThemeBackgroundColor);
+    height: 25px;
+    border-bottom: 1px solid var(--DarkThemeBackgroundColor);
+    color: var(--LightThemeTextColor);
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    outline: none;
+    padding: 5px;
+    transition: width 0.5s ease-in;
+}
+.home.dark .searchBar input{
+    background: var(--DarkThemeBackgroundColor);
+    height: 25px;
+    border-bottom: 1px solid rgb(255,255,255,38%);
+    color: var(--DarkThemeTextColor);
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    outline: none;
+    padding: 5px;
+    transition: width 0.5s ease-in;
+}
+.searchBar input{
+}
+.searchBar input::placeholder{
+    padding-left: 15px;
+}
 .navbar__left{
     display: flex;
     align-items: center;
 }
+.home.dark .navbar__left h3{
+    padding-left: 30px;
+    color: var(--DarkThemeTextColor);
+}
 .navbar__left h3{
     padding-left: 30px;
-    color: rgb(255,255,255,38%);
+    color: var(--LightThemeTextColor);
 }
-.navbar__right{
-    /* display: flex; */
-    /* background-color: #502F33; */
-    /* width: 20%; */
-    }
 .searchBtnWrap:nth-child(1){
     margin-right :40px;
 }
 .searchBtnWrap{
     width: 20px;
     height: 22px;
-}
+    cursor: pointer;
+} 
 .search{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background-color: rebeccapurple; */
     
 }
 .searchBtnWrap img{
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+/* calender  */
+
+.datePreview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #121212;
+    width: 100%;
+    overflow-x: hidden;
+    border: rgba(255, 255, 255, 14%);
+    border-radius: 11px;
+    color: white;
+    font-family: Poppins;
+    padding-top:  30px;
+}
+.days{
+    width: 72px;
+    height: 69px;
+    background-color: #1F1E1E;
+    border-radius: 9px;
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.75s ease;
+}
+.days:hover{
+    transform: translateY(-5px);
+}
+.days.currentDay .dayNumbers{
+    border-bottom: 2px solid #b49ea9;;
+}
+.Weekdays{
+    display: absolute;
+    top: 0;
+    left: 0;
+    width: 72px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    font-size: 11px;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 68%);
+}
+.dayNumbers{
+    position: absolute;
+    bottom: 0;
+    width: 72px;
+    height: 43px;
+    border-radius: 9px;
+    background-color: #363333;
+    padding: 10px;
+    text-align: center;
+    font-size : 14px;
 }
 @media screen and (max-width : 500px) {
  
