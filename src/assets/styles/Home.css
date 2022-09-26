@@ -1,10 +1,10 @@
 @font-face {
     font-family: rubik;
-    src: url("../assets/fonts/Rubik-Bold.ttf");
+    src: url("../../assets/fonts/Rubik-Bold.ttf");
 }
 @font-face {
     font-family: Poppins;
-    src: url("../assets/fonts/Poppins-Medium.ttf");
+    src: url("../../assets/fonts/Poppins-Medium.ttf");
 }
 :root{
     --DarkThemeBackgroundColor : #121212;
