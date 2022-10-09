@@ -18,10 +18,7 @@ function SideNav() {
     const toggle = useSelector((state) => state.toggle.value);
  
     const dispatch = useDispatch();
-   
-    // const [ navActive, setnavActive ] = useState(true);
-    // const [ pageTheme, setPageTheme ] = useState(false);
-    
+     
     const date = new Date();
     const WeekDays = [ "Sun", "Mon", "Tues", "Wed", "Thur", "Fri","Sat"];
    

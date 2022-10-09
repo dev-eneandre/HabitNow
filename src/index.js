@@ -7,11 +7,13 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux"; 
 import themeReducer from "./features/theme";
 import toggleReducer from "./features/toggle";
+import modalReducer from "./features/modal";
 
 const store = configureStore({
   reducer : {
     theme : themeReducer,
     toggle : toggleReducer,
+    modal : modalReducer
   }
 })
 

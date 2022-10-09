@@ -3,12 +3,14 @@ import SearchIcon from "../assets/svg/search.svg";
 import CalenderIcon from "../assets/svg/Calender.svg";
 import { useDispatch } from "react-redux";
 import { toggleState } from '../features/toggle';
+import { modalState } from '../features/modal';
 import { useSelector } from "react-redux";
 
-
+    
 function Navbar() {
     const toggle = useSelector((state) => state.toggle.value);
- 
+    
+
     const dispatch = useDispatch()
     const [ navActive, setnavActive ] = useState(true);
     const [ searchToggle, setSearchToggle ] = useState(false);
@@ -33,7 +35,7 @@ function Navbar() {
                 </div>
 
                 <div className="searchBtnWrap">
-                    <img src={CalenderIcon} alt='icon' />
+                    <img src={CalenderIcon} alt='icon' onClick={() => dispatch(modalState(true))}/>
                 </div>
             </div>
         </div>

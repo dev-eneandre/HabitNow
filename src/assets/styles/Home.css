@@ -140,10 +140,6 @@
     transition: 0.5s;
 }
 .navwrap:hover{
-    /* border: 1px solid rgb(255,255,255,38%); */
-    /* background: #502F33; */
-}
-.navwrap:hover{
     border: 1px solid rgb(255,255,255,38%);
     background-color: #502F33;
 }
@@ -228,8 +224,6 @@ a:active{
     padding: 5px;
     transition: width 0.5s ease-in;
 }
-.searchBar input{
-}
 .searchBar input::placeholder{
     padding-left: 15px;
 }
@@ -265,7 +259,7 @@ a:active{
     height: 100%;
     object-fit: contain;
 }
-/* calender  */
+/* calender  preview */
 
 .datePreview{
     display: flex;
@@ -281,7 +275,7 @@ a:active{
     font-family: Poppins;
     padding-top:  30px;
 }
-.days{
+.days__preview{
     width: 72px;
     height: 69px;
     background-color: #1F1E1E;
@@ -291,13 +285,13 @@ a:active{
     cursor: pointer;
     transition: 0.75s ease;
 }
-.days:hover{
+.days__preview:hover{
     transform: translateY(-5px);
 }
-.days.currentDay .dayNumbers{
+.days__preview.currentDay__preview .dayNumbers__preview{
     border-bottom: 2px solid #b49ea9;;
 }
-.Weekdays{
+.Weekdays__preview{
     display: absolute;
     top: 0;
     left: 0;
@@ -309,7 +303,7 @@ a:active{
     font-weight: 100;
     color: rgba(255, 255, 255, 68%);
 }
-.dayNumbers{
+.dayNumbers__preview{
     position: absolute;
     bottom: 0;
     width: 72px;
@@ -320,6 +314,41 @@ a:active{
     text-align: center;
     font-size : 14px;
 }
+
+/* modal  */
+
+.bg-modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0);
+    position: absolute;
+    top: 0px;
+    display: none;
+}
+.modal-content-wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .modal-content{
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    margin-left: 30px;
+} */
+.bg-modal.active-modal{
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: block;
+}
+
+
 @media screen and (max-width : 500px) {
  
     .home .sidenav.active{

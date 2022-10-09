@@ -13,7 +13,7 @@ function CalenderPreview() {
 
   return (
     <div className="datePreview">
-    {/* calender or whatever */}
+    {/* calender preview */}
     {
         (() => {
             let days = [];
@@ -21,21 +21,21 @@ function CalenderPreview() {
             for(let x = (TodaysDate-getTheDay); x <= lastDay; x++){
                 if (x === new Date().getDate() && date.getMonth() === new Date().getMonth()) {
                     days.push(
-                    <div className="days currentDay">
-                        <div className="Weekdays">
+                    <div className="days__preview currentDay__preview">
+                        <div className="Weekdays__preview">
                             {weekDayDateCount >= 6 ? WeekDays[weekDayDateCount = 0 ]: WeekDays[weekDayDateCount +=1 ]}
                             </div>
-                            <div className="dayNumbers">
+                            <div className="dayNumbers__preview">
                                 {x}
                                 </div>
                                 </div>)
                             }else{
                                 days.push(
-                                <div className="days ">
-                                    <div className="Weekdays">
+                                <div className="days__preview ">
+                                    <div className="Weekdays__preview">
                                         {weekDayDateCount >= 6 ? WeekDays[weekDayDateCount = 0 ]: WeekDays[weekDayDateCount +=1 ]}
                                     </div>
-                                <div className="dayNumbers">
+                                <div className="dayNumbers__preview">
                                         {x}
                                     </div>
                             </div>)
